@@ -89,6 +89,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
+// Simple test endpoint
+app.post('/api/test', (req, res) => {
+  res.json({ message: 'Test endpoint works!', body: req.body });
+});
+
 // Contact form endpoint
 app.post('/api/contact', emailLimiter, validateContactForm, async (req, res) => {
   try {
