@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
 
     try {
       const apiUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://outstanding-mercy.railway.app/api/contact'
+        ? 'https://portflex.onrender.com/api/contact'
         : 'http://localhost:3001/api/contact';
       
       const response = await fetch(apiUrl, {
