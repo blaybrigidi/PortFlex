@@ -23,7 +23,10 @@ const emailLimiter = rateLimit({
 // CORS configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-domain.com'] // Replace with your actual domain
+    ? [
+        'https://elaborate-souffle-6bca28.netlify.app',
+        'https://*.netlify.app'
+      ]
     : ['http://localhost:3000'],
   credentials: true,
   optionsSuccessStatus: 200
