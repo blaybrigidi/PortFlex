@@ -84,6 +84,11 @@ const validateContactForm = (req, res, next) => {
   next();
 };
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ message: 'Portfolio API Server', version: '1.0.0', endpoints: ['/health', '/api/contact', '/api/test'] });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
@@ -92,6 +97,20 @@ app.get('/health', (req, res) => {
 // Simple test endpoint
 app.post('/api/test', (req, res) => {
   res.json({ message: 'Test endpoint works!', body: req.body });
+});
+
+// Debug: List all routes
+app.get('/debug/routes', (req, res) => {
+  const routes = [];
+  app._router.stack.forEach((middleware) => {
+    if (middleware.route) {
+      routes.push({
+        path: middleware.route.path,
+        method: Object.keys(middleware.route.methods)[0].toUpperCase()
+      });
+    }
+  });
+  res.json({ routes });
 });
 
 // Contact form endpoint
