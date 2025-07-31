@@ -20,14 +20,17 @@ const emailLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-// CORS configuration
-const corsOptions = {
-  origin: true, // Allow all origins for now
+// CORS configuration - more explicit
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow all origins
+    callback(null, true);
+  },
   credentials: true,
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+}));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
