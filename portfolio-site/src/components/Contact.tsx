@@ -324,7 +324,7 @@ const Contact: React.FC = () => {
                   >
                     ⏳
                   </motion.div>
-                  Sending...
+                  Sending (waking up server...)
                 </>
               ) : (
                 <>

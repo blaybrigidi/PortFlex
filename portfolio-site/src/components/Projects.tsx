@@ -63,7 +63,6 @@ const Projects: React.FC = () => {
       whyBuilt: 'An Instagram fashion brand posted about struggling with inventory management and order tracking across multiple platforms. They were losing sales due to overselling and customers were frustrated with delayed updates. I reached out and built this real-time tracking system to solve their operational challenges.',
       tech: ['Apache Kafka', 'Debezium', 'WebSockets', 'React', 'PostgreSQL', 'Docker'],
       date: 'Mar 2024 – May 2024',
-      githubUrl: 'https://github.com/your-github/order-tracker',
       tags: [],
       highlights: [
         'Sub-second inventory synchronization',
