@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
 
     try {
       const apiUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://brigidi-portfolio-api.fly.dev/api/contact'
+        ? 'https://outstanding-mercy.railway.app/api/contact'
         : 'http://localhost:3001/api/contact';
       
       const response = await fetch(apiUrl, {
